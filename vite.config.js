@@ -1,6 +1,6 @@
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/Demo4/',
+  base: process.env.NODE_ENV === 'production' ? '/Demo4/' : '/',
   plugins: [
     vue({ 
       template: { transformAssetUrls }
