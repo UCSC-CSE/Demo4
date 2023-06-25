@@ -1,6 +1,13 @@
+// Plugins
+import vue from '@vitejs/plugin-vue'
+import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
+
+// Utilities
+import { defineConfig } from 'vite'
+import { fileURLToPath, URL } from 'node:url'
+
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? '/Demo4/' : '/',
   plugins: [
     vue({ 
       template: { transformAssetUrls }
@@ -13,6 +20,7 @@ export default defineConfig({
       },
     }),
   ],
+  base: process.env.NODE_ENV === 'production' ? '/Demo4/' : '/',
   define: { 'process.env': {} },
   resolve: {
     alias: {
